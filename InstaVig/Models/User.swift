@@ -10,6 +10,7 @@ import Foundation
 import Firebase;
 
 class User {
+    
     let id:String
     let name:String
     let image:String
@@ -50,5 +51,6 @@ class User {
         json["lastUpdate"] = ServerValue.timestamp()
         return json
     }
+    
 }
 

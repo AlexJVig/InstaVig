@@ -11,6 +11,8 @@
 		02445ED1047A5C21CA0D7D2E /* Pods_InstaVigTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A4DD3ED8FF970556E06CAD /* Pods_InstaVigTests.framework */; };
 		3A4D8E6D22343EFC00D61111 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D8E6C22343EFC00D61111 /* DBModel.swift */; };
 		3A4D8E6F22343F3D00D61111 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D8E6E22343F3D00D61111 /* Post.swift */; };
+		3A4D8E7122345A6A00D61111 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D8E7022345A6A00D61111 /* Utilities.swift */; };
+		3A4D8E7322345E0F00D61111 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D8E7222345E0F00D61111 /* FirebaseModel.swift */; };
 		3A681BDA2233ED1600E00B4D /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681BD92233ED1600E00B4D /* EntryViewController.swift */; };
 		3A681BDD22340D4F00E00B4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681BDC22340D4F00E00B4D /* User.swift */; };
 		3A681BDF2234117A00E00B4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A681BDE2234117A00E00B4D /* GoogleService-Info.plist */; };
@@ -46,6 +48,8 @@
 		1AAA96D75670405D5AE34E67 /* Pods-InstaVigUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaVigUITests.release.xcconfig"; path = "Target Support Files/Pods-InstaVigUITests/Pods-InstaVigUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3A4D8E6C22343EFC00D61111 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		3A4D8E6E22343F3D00D61111 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		3A4D8E7022345A6A00D61111 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3A4D8E7222345E0F00D61111 /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		3A681BD92233ED1600E00B4D /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		3A681BDC22340D4F00E00B4D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3A681BDE2234117A00E00B4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				3A681BDC22340D4F00E00B4D /* User.swift */,
 				3A4D8E6C22343EFC00D61111 /* DBModel.swift */,
 				3A4D8E6E22343F3D00D61111 /* Post.swift */,
+				3A4D8E7222345E0F00D61111 /* FirebaseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				3AB211EE222AF76700F75D61 /* Info.plist */,
 				3AFA274C2233CA84008F44CB /* RegistrationViewController.swift */,
 				3A681BD92233ED1600E00B4D /* EntryViewController.swift */,
+				3A4D8E7022345A6A00D61111 /* Utilities.swift */,
 			);
 			path = InstaVig;
 			sourceTree = "<group>";
@@ -424,12 +430,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4D8E7322345E0F00D61111 /* FirebaseModel.swift in Sources */,
 				3AFA274D2233CA84008F44CB /* RegistrationViewController.swift in Sources */,
 				3A681BDA2233ED1600E00B4D /* EntryViewController.swift in Sources */,
 				3AB211E5222AF76500F75D61 /* ViewController.swift in Sources */,
 				3A681BDD22340D4F00E00B4D /* User.swift in Sources */,
 				3AB211E3222AF76500F75D61 /* AppDelegate.swift in Sources */,
 				3A4D8E6F22343F3D00D61111 /* Post.swift in Sources */,
+				3A4D8E7122345A6A00D61111 /* Utilities.swift in Sources */,
 				3A4D8E6D22343EFC00D61111 /* DBModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

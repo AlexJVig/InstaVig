@@ -27,7 +27,7 @@ class EntryViewController: UIViewController {
     }
     */
     
-    @IBAction func cancelToLoginViewController(segue: UIStoryboardSegue) {
+    @IBAction func cancelToLoginViewController(_ segue: UIStoryboardSegue) {
         print("unwound")
     }
     

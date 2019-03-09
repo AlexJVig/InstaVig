@@ -9,29 +9,40 @@
 import UIKit
 
 class RegistrationViewController: UIViewController {
+    
+    @IBOutlet weak var fullNameOutlet: UITextField!
+    @IBOutlet weak var emailOutlet: UITextField!
+    @IBOutlet weak var passwordOutlet: UITextField!
+    @IBOutlet weak var verifyOutlet: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    /*
-    @IBAction func cancelToLoginViewController(segue: UIStoryboardSegue) {
-        print("unwound")
+    @IBAction func onRegister(_ sender: Any) {
+        if (fullNameOutlet.text?.isEmpty ?? true || emailOutlet.text?.isEmpty ?? true || passwordOutlet.text?.isEmpty ?? true || verifyOutlet.text?.isEmpty ?? true)
+        {
+            Utilities.showAlert("Please fill all the details", self)
+        }
+        else if (passwordOutlet.text != verifyOutlet.text)
+        {
+            Utilities.showAlert("Passwords do not match", self)
+        }
+        else {
+            Utilities.showSpinner(onView: self.view)
+            
+            FirebaseModel.instance.createUser(email: emailOutlet.text!, password: passwordOutlet.text!, name: fullNameOutlet.text!) { (result : Bool) in
+                Utilities.removeSpinner()
+                if (!result)
+                {
+                    Utilities.showAlert("Error in register, Please try again", self)
+                }
+                else
+                {
+                    self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+                }
+            }
+        }
     }
     
-    @IBAction func confirmToLoginViewController(_ segue: UIStoryboardSegue) {
-        print("unwound")
-    }
-    */
 }
