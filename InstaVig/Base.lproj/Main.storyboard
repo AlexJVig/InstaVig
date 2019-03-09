@@ -10,27 +10,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="DrC-0R-5N5">
             <objects>
-                <viewController id="vB7-TH-AL1" sceneMemberID="viewController">
+                <viewController id="vB7-TH-AL1" customClass="RegistrationViewController" customModule="InstaVig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2PX-P2-gmp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLt-hB-PP3">
-                                <rect key="frame" x="141" y="55" width="92" height="21"/>
+                                <rect key="frame" x="141" y="121" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QL-Uy-neI">
+                                <rect key="frame" x="0.0" y="46" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="EL8-Hq-1Si">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Vjc-fn-p0l">
+                                            <connections>
+                                                <segue destination="pu8-ug-hbH" kind="unwind" unwindAction="cancelToLoginViewControllerWithSegue:" id="56y-SG-D9T"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Confirm" id="vuU-dQ-WGJ">
+                                            <connections>
+                                                <segue destination="pu8-ug-hbH" kind="unwind" unwindAction="confirmToLoginViewController:" id="FrY-aI-kj2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iTG-fg-Kgd"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpm-0D-Gdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pu8-ug-hbH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1074" y="806"/>
         </scene>
@@ -121,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="193" y="-839"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="W7M-LU-Q3g">
             <objects>
-                <viewController id="DlB-dc-wJQ" sceneMemberID="viewController">
+                <viewController id="DlB-dc-wJQ" customClass="EntryViewController" customModule="InstaVig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHq-7M-zk9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,7 +178,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="vB7-TH-AL1" kind="show" id="CD5-KC-LGI"/>
+                                    <segue destination="vB7-TH-AL1" kind="show" id="xKi-tX-3fM"/>
                                 </connections>
                             </button>
                         </subviews>
