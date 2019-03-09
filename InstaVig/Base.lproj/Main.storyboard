@@ -123,11 +123,11 @@
             </objects>
             <point key="canvasLocation" x="1345" y="-839"/>
         </scene>
-        <!--Posts-->
+        <!--Feed-->
         <scene sceneID="1lJ-fj-iCF">
             <objects>
                 <navigationController id="iyU-2g-K7i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Posts" id="mzx-Ad-Xvp"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="mzx-Ad-Xvp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rvo-l0-QvR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
