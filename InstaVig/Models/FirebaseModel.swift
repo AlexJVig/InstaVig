@@ -12,7 +12,19 @@ import FirebaseDatabase
 
 class FirebaseModel {
     
+    var ref: DatabaseReference!
+    
+    init() {
+        FirebaseApp.configure()
+        ref = Database.database().reference()
+    }
+    
     static let instance:FirebaseModel = FirebaseModel()
+    
+    func updateUser(user: User)
+    {
+        ref.child("users").child(user.id).setValue(user.toJson())
+    }
     
     func createUser(email:String, password:String, name:String, callback:@escaping (Bool)->Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -20,7 +32,7 @@ class FirebaseModel {
                 let user = User(_id: userId, _name: name)
                 //self.updateUser(user: user)
                 callback (true)
-            }else{
+            } else {
                 callback (false)
             }
         }

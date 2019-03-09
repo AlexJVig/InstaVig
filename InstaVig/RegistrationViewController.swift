@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class RegistrationViewController: UIViewController {
+    
+    var ref: DatabaseReference!
     
     @IBOutlet weak var fullNameOutlet: UITextField!
     @IBOutlet weak var emailOutlet: UITextField!
@@ -17,6 +20,7 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
     }
     
     @IBAction func onRegister(_ sender: Any) {
@@ -31,6 +35,7 @@ class RegistrationViewController: UIViewController {
         else {
             Utilities.showSpinner(onView: self.view)
             
+            /*
             FirebaseModel.instance.createUser(email: emailOutlet.text!, password: passwordOutlet.text!, name: fullNameOutlet.text!) { (result : Bool) in
                 Utilities.removeSpinner()
                 if (!result)
@@ -42,6 +47,9 @@ class RegistrationViewController: UIViewController {
                     self.performSegue(withIdentifier: "unwindToLogin", sender: self)
                 }
             }
+            */
+            
+            self.ref.child("users").childByAutoId().setValue("Hihh")
         }
     }
     

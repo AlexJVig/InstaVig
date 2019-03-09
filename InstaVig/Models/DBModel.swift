@@ -18,10 +18,10 @@ class DBModel {
     var userReference: DatabaseReference?
     var userObserver: DatabaseHandle?
     
-    init() {
-        FirebaseApp.configure()
-        ref = Database.database().reference()
-    }
+    //init() {
+    //    FirebaseApp.configure()
+    //    ref = Database.database().reference()
+    //}
     
     func removeObservers() {
         postsReference?.removeObserver(withHandle: postsObserver!)
