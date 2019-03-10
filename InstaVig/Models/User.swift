@@ -12,28 +12,28 @@ import Firebase;
 class User {
     
     let id:String
-    let name:String
-    let image:String
-    let about:String
+    let fullName:String
+    let profilePicture:String
+    let description:String
     var lastUpdate:Double?
     
-    init(_id:String, _name:String, _about:String = "", _image:String = "", _lastUpdate:Double? = nil){
+    init(_id:String, _fullName:String, _description:String = "", _profilePicture:String = "", _lastUpdate:Double? = nil){
         id = _id
-        name = _name
-        image = _image
-        about = _about
+        fullName = _fullName
+        profilePicture = _profilePicture
+        description = _description
         lastUpdate = _lastUpdate
     }
     
     init(json:[String:Any]) {
         id = json["id"] as! String
-        name = json["name"] as! String
-        about = json["about"] as! String
+        fullName = json["name"] as! String
+        description = json["about"] as! String
         
         if json["image"] != nil{
-            image = json["image"] as! String
+            profilePicture = json["image"] as! String
         }else{
-            image = ""
+            profilePicture = ""
         }
         if json["lastUpdate"] != nil {
             if let lud = json["lastUpdate"] as? Double{
@@ -45,9 +45,9 @@ class User {
     func toJson() -> [String:Any] {
         var json = [String:Any]()
         json["id"] = id
-        json["name"] = name
-        json["about"] = about
-        json["image"] = image
+        json["name"] = fullName
+        json["about"] = description
+        json["image"] = profilePicture
         json["lastUpdate"] = ServerValue.timestamp()
         return json
     }

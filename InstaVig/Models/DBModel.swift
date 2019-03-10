@@ -65,15 +65,7 @@ class DBModel {
     }
     
     func createUser(email:String, password:String, name:String, callback:@escaping (Bool)->Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-            if let userId = authResult?.user.uid {
-                let user = User(_id: userId, _name: name)
-                self.updateUser(user: user)
-                callback (true)
-            } else {
-                callback (false)
-            }
-        }
+        
     }
     
 }

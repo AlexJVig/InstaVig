@@ -35,21 +35,13 @@ class RegistrationViewController: UIViewController {
         else {
             Utilities.showSpinner(onView: self.view)
             
-            /*
-            FirebaseModel.instance.createUser(email: emailOutlet.text!, password: passwordOutlet.text!, name: fullNameOutlet.text!) { (result : Bool) in
-                Utilities.removeSpinner()
-                if (!result)
-                {
-                    Utilities.showAlert("Error in register, Please try again", self)
-                }
-                else
-                {
-                    self.performSegue(withIdentifier: "unwindToLogin", sender: self)
-                }
-            }
-            */
+            let user = User(_id: "", _fullName: fullNameOutlet.text ?? "", _description: "", _profilePicture: "", _lastUpdate: 0)
             
-            self.ref.child("users").childByAutoId().setValue("Hihh")
+            self.ref.child("users").childByAutoId().setValue(user.toJson())
+            
+            Utilities.removeSpinner()
+            
+            dismiss(animated: true, completion: nil)
         }
     }
     

@@ -23,11 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="EL8-Hq-1Si">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Vjc-fn-p0l">
-                                            <connections>
-                                                <segue destination="pu8-ug-hbH" kind="unwind" unwindAction="cancelToLoginViewController:" id="BBr-i8-Hhd"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Vjc-fn-p0l"/>
                                         <barButtonItem key="rightBarButtonItem" title="Confirm" id="vuU-dQ-WGJ">
                                             <connections>
                                                 <action selector="onRegister:" destination="vB7-TH-AL1" id="m9d-vj-4l4"/>
@@ -108,6 +104,7 @@
                         <outlet property="fullNameOutlet" destination="zPL-vj-qUE" id="FY4-7k-7a6"/>
                         <outlet property="passwordOutlet" destination="WpH-nS-yac" id="wy0-re-saj"/>
                         <outlet property="verifyOutlet" destination="WaZ-LC-odz" id="zGS-q4-iEQ"/>
+                        <segue destination="pu8-ug-hbH" kind="unwind" unwindAction="returnToLoginViewController:" id="kur-2c-1Ra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpm-0D-Gdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
