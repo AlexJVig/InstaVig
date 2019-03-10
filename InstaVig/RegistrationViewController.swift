@@ -23,7 +23,7 @@ class RegistrationViewController: UIViewController {
         ref = Database.database().reference()
     }
     
-    @IBAction func onRegister(_ sender: Any) {
+    @IBAction func register(_ sender: Any) {
         if (fullNameOutlet.text?.isEmpty ?? true || emailOutlet.text?.isEmpty ?? true || passwordOutlet.text?.isEmpty ?? true || verifyOutlet.text?.isEmpty ?? true)
         {
             Utilities.showAlert("Please fill all the details", self)
