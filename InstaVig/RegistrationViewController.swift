@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class RegistrationViewController: UIViewController {
     
@@ -24,7 +25,11 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func register(_ sender: Any) {
-        if (fullNameOutlet.text?.isEmpty ?? true || emailOutlet.text?.isEmpty ?? true || passwordOutlet.text?.isEmpty ?? true || verifyOutlet.text?.isEmpty ?? true)
+        let fullNameText = fullNameOutlet.text ?? ""
+        let passwordText = passwordOutlet.text ?? ""
+        let emailText = emailOutlet.text ?? ""
+        
+        if (fullNameText == "" || emailText == "" || passwordText == "" || verifyOutlet.text?.isEmpty ?? true)
         {
             Utilities.showAlert("Please fill all the details", self)
         }
@@ -35,12 +40,21 @@ class RegistrationViewController: UIViewController {
         else {
             Utilities.showSpinner(onView: self.view)
             
-            let user = User(_id: "", _fullName: fullNameOutlet.text ?? "", _description: "", _profilePicture: "", _lastUpdate: 0)
+            //let user = User(_id: "", _fullName: fullNameOutlet.text ?? "", _description: "", _profilePicture: "", _lastUpdate: 0)
             
-            self.ref.child("users").childByAutoId().setValue(user.toJson())
+            //self.ref.child("users").childByAutoId().setValue(user.toJson())
+            
+            Auth.auth().createUser(withEmail: emailText, password: passwordText) { authResult, error in
+                if let userId = authResult?.user.uid {
+                    let user = User(_id: userId, _fullName: fullNameText, _description: "", _profilePicture: "", _lastUpdate: 0)
+                    
+                    self.ref.child("users").childByAutoId().setValue(user.toJson())
+                } else {
+                    Utilities.showAlert("User creation has failed!", self)
+                }
+            }
             
             Utilities.removeSpinner()
-            
             dismiss(animated: true, completion: nil)
         }
     }

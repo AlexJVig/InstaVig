@@ -168,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="194" y="314"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile View Controller-->
         <scene sceneID="ri4-tS-Byg">
             <objects>
-                <viewController id="Jsd-7T-t7m" sceneMemberID="viewController">
+                <viewController id="Jsd-7T-t7m" customClass="EditProfileViewController" customModule="InstaVig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6FI-41-MhS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
