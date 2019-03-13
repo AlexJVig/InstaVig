@@ -14,7 +14,7 @@ class Post {
     let id:String
     let text:String
     let userId:String
-    let image:String
+    let imageUrl:String
     var isDeleted:Int
     var lastUpdate:Double?
     var date:Date {
@@ -23,11 +23,11 @@ class Post {
         }
     }
     
-    init(_id:String, _text:String, _userId:String, _image:String = "", _lastUpdate:Double? = nil, _isDeleted: Int = 0){
+    init(_id:String, _text:String, _userId:String, _imageUrl:String = "", _lastUpdate:Double? = nil, _isDeleted: Int = 0){
         id = _id
         text = _text
         userId = _userId
-        image = _image
+        imageUrl = _imageUrl
         lastUpdate = _lastUpdate
         isDeleted = _isDeleted
     }
@@ -38,9 +38,9 @@ class Post {
         userId = json["userId"] as! String
         isDeleted = json["isDeleted"] as! Int
         if json["image"] != nil{
-            image = json["image"] as! String
+            imageUrl = json["image"] as! String
         }else{
-            image = ""
+            imageUrl = ""
         }
         if json["lastUpdate"] != nil {
             if let lud = json["lastUpdate"] as? Double{
@@ -54,7 +54,7 @@ class Post {
         json["id"] = id
         json["text"] = text
         json["userId"] = userId
-        json["image"] = image
+        json["imageUrl"] = imageUrl
         json["lastUpdate"] = ServerValue.timestamp()
         json["isDeleted"] = isDeleted
         return json
