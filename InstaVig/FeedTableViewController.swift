@@ -68,7 +68,7 @@ class FeedTableViewController: UITableViewController {
         let islandRef = Storage.storage().reference(withPath: "images/" + post.id + ".jpg")
         
         cell.bodyOutlet?.text = post.text
-        cell.fullNameOutlet?.text = post.text
+        cell.fullNameOutlet?.text = post.userId
         
         islandRef.getData(maxSize: 1 * 4096 * 4096) { data, error in
             if let error = error {
@@ -78,6 +78,17 @@ class FeedTableViewController: UITableViewController {
                 cell.imageOutlet.image = UIImage(data: data!)
             }
         }
+        
+        //let profilePicRef = Storage.storage().reference(withPath: "images/" + post.id + ".jpg")
+        
+        //ref.child("users").child("-L_mB7DCo3XN-LcTTkVS").observeSingleEvent(of: .value, with: { (snapshot) in
+        //    let value = snapshot.value as? NSDictionary
+        //    let id = value?["id"] as? String ?? ""
+            
+                // ...
+        //    }) { (error) in
+        //        print(error.localizedDescription)
+        //}
         
         return cell
     }

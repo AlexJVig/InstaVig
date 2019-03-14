@@ -58,7 +58,8 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             
         }
         
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "BackToFeed", sender: self)
     }
     
     private func uploadImage(_ postId: String) -> String {

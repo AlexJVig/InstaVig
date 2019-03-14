@@ -132,7 +132,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="js2-WV-NGK">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="3RL-js-pdc"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="3RL-js-pdc">
+                                            <connections>
+                                                <action selector="logout:" destination="Guz-0A-kay" id="4v0-X3-rQx"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="pzk-tf-zBm">
                                             <connections>
                                                 <segue destination="Jsd-7T-t7m" kind="show" id="rJF-LQ-v3N"/>
@@ -164,6 +168,9 @@
                         <viewLayoutGuide key="safeArea" id="HY4-IK-kxx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" id="IZG-M5-8Do"/>
+                    <connections>
+                        <segue destination="DlB-dc-wJQ" kind="show" identifier="BackToEntry" id="eiN-NP-6nc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQC-Ms-unr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +188,7 @@
                                 <rect key="frame" x="0.0" y="36" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="jhe-Jt-FOj">
+                                    <navigationItem title="Edit Profile" id="jhe-Jt-FOj">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="g2f-Uf-UiK">
                                             <connections>
                                                 <segue destination="Qsa-x3-eGm" kind="unwind" unwindAction="backToMyProfile:" id="ifj-qV-Ow4"/>
@@ -224,7 +231,7 @@
             </objects>
             <point key="canvasLocation" x="1345" y="313"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Posts-->
         <scene sceneID="GA5-5Q-fM7">
             <objects>
                 <tableViewController id="eQZ-Cb-EwG" customClass="FeedTableViewController" customModule="InstaVig" customModuleProvider="target" sceneMemberID="viewController">
@@ -277,8 +284,7 @@
                             <outlet property="delegate" destination="eQZ-Cb-EwG" id="vr3-1f-Kvd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="QuI-dg-VIr">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="OCv-JD-mo2"/>
+                    <navigationItem key="navigationItem" title="Posts" id="QuI-dg-VIr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2Zc-39-nEc">
                             <connections>
                                 <segue destination="d6b-7s-t0x" kind="show" id="ohV-ev-Xdd"/>
@@ -371,6 +377,7 @@
                     <connections>
                         <outlet property="imageViewOutlet" destination="XKs-Q5-5e3" id="k3Y-Vu-a7c"/>
                         <outlet property="textOutlet" destination="LWY-TU-Kd5" id="rQa-yR-RbM"/>
+                        <segue destination="eQZ-Cb-EwG" kind="show" identifier="BackToFeed" id="pkG-t3-aFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TOh-3S-h9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -451,4 +458,7 @@
             <point key="canvasLocation" x="-1073" y="-262"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wXk-jv-Ycb"/>
+    </inferredMetricsTieBreakers>
 </document>

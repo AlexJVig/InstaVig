@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class MyProfileViewController: UIViewController {
     
@@ -20,4 +21,12 @@ class MyProfileViewController: UIViewController {
     
     @IBAction func backToMyProfile(_ segue: UIStoryboardSegue) { }
     
+    @IBAction func logout(_ sender: Any) {
+    do {
+        try Auth.auth().signOut()
+    } catch {
+    print ("Error signing out: %@")
+    }
+        performSegue(withIdentifier: "BackToEntry", sender: self)
+    }
 }
