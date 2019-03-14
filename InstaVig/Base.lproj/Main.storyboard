@@ -224,11 +224,11 @@
             </objects>
             <point key="canvasLocation" x="1345" y="313"/>
         </scene>
-        <!--Feed-->
+        <!--Title-->
         <scene sceneID="YUb-8y-Vw1">
             <objects>
-                <tableViewController id="hOG-8M-7fR" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sNA-Kn-Qgb">
+                <tableViewController id="hOG-8M-7fR" customClass="FeedTableViewController" customModule="InstaVig" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sNA-Kn-Qgb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -247,7 +247,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="352" id="PRj-RD-lid" customClass="FeedTableViewCell" customModule="InstaVig" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="352" id="PRj-RD-lid" customClass="FeedTableViewCell" customModule="InstaVig" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="352"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PRj-RD-lid" id="cDW-li-4tD">
@@ -292,6 +292,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Feed" id="Qtc-z6-4Zr"/>
+                    <navigationItem key="navigationItem" title="Title" id="UYa-Ne-Sj3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWw-Ei-bbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -432,8 +433,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Guz-0A-kay" kind="relationship" relationship="viewControllers" id="fuH-5C-0ZO"/>
                         <segue destination="hOG-8M-7fR" kind="relationship" relationship="viewControllers" id="0te-Au-aha"/>
+                        <segue destination="Guz-0A-kay" kind="relationship" relationship="viewControllers" id="fuH-5C-0ZO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUr-ai-rCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

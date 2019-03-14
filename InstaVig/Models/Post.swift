@@ -17,11 +17,6 @@ class Post {
     let imageUrl:String
     var isDeleted:Int
     var lastUpdate:Double?
-    var date:Date {
-        get {
-            return Date(timeIntervalSince1970: lastUpdate! / 1000);
-        }
-    }
     
     init(_id:String, _text:String, _userId:String, _imageUrl:String = "", _lastUpdate:Double? = nil, _isDeleted: Int = 0){
         id = _id
@@ -37,16 +32,8 @@ class Post {
         text = json["text"] as! String
         userId = json["userId"] as! String
         isDeleted = json["isDeleted"] as! Int
-        if json["image"] != nil{
-            imageUrl = json["image"] as! String
-        }else{
-            imageUrl = ""
-        }
-        if json["lastUpdate"] != nil {
-            if let lud = json["lastUpdate"] as? Double{
-                lastUpdate = lud
-            }
-        }
+        imageUrl = json["imageUrl"] as! String
+        lastUpdate = json["lastUpdate"] as! Double
     }
     
     func toJson() -> [String:Any] {
